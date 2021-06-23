@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even change jquery</title>
+    <style>
+      input,
+      textarea,
+      select {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Even Change in Jquery</h1>
+    <div style="margin: 10% auto; max-width: 400px; min-height: 400px">
+      <form action="" method="post">
+        <label for="input_name">Name</label>
+        <input type="text" id="input_name" />
+
+        <label for="select_amount">Amount: </label>
+        <select name="" id="select_amount">
+          <option value="">---options---</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <label for="input_text_area">Describe</label>
+        <textarea name="" id="input_text_area" cols="30" rows="10"></textarea>
+      </form>
+      <a href="#" id="other">Other</a>
+    </div>
+
+    <script src="./js/jquery.js"></script>
+
+    <script>
+      $(function () {
+        $("#input_name").change(function () {
+          console.log($(this).val());
+        });
+
+        $("#select_amount").change(function () {
+          console.log($(this).val());
+        });
+
+        $("#input_text_area").change(function () {
+          console.log($(this).val());
+        });
+
+        $('#other').click(function () {
+          $("#input_name").change();
+          $("#select_amount").change();
+          $("#input_text_area").change();
+        });
+
+        return false;
+      });
+    </script>
+  </body>
+</html>
